@@ -1,3 +1,4 @@
+# Fotag
 Assignment Two Readme
 
 Welcome to the introduction of software: Fotag(m8ni). This software is designed and implemented by Mingkun Ni (ID 20655166). Here are some instruction about how to use this software.
