@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="0">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Fotag(m8ni)"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="183dp" />
+
+
+        <ImageButton
+            android:id="@+id/load"
+            android:layout_width="53dp"
+            android:layout_height="47dp"
+            android:onClick="onLoadButtonClick"
+            app:srcCompat="@android:drawable/stat_sys_download_done"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <ImageButton
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClearButtonClick"
+            app:srcCompat="@android:drawable/btn_dialog"
+            tools:layout_editor_absoluteX="89dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar"
+            android:stepSize="1"
+            android:progressTint="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="130dp"
+            android:isIndicator="false"
+            android:numStars="5"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="0dp" />
+        <Button
+            android:id="@+id/clearFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="onClearFilterClick"
+            android:text="Clear Filter"
+            android:visibility="gone" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_weight="0">
+
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/llbunny.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/bunny.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RatingBar
+                        android:id="@+id/ratingbunny.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                    <Button
+                        android:id="@+id/Rbunny.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llchinchilla.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/chinchilla.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingchinchilla.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+                    <Button
+                        android:id="@+id/Rchinchilla.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lldoggo.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/doggo.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingdoggo.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rdogoo.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llhamster.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/hamster.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratinghamster.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rhamster.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llhusky.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/husky.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratinghusky.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rhusky.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llkitten.png"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/kitten.png"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingkitten.png"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rkitten.png"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llloris.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/loris.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingloris.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rloris.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llpuppy.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/puppy.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingpuppy.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rpuppy.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llredpanda.jpg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/redpanda.jpg"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingredpanda.jpg"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rredpanda.jpg"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llsleepy.png"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="30dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/sleepy.png"
+                    android:layout_width="250dp"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="false"
+                    android:onClick="onImageViewClick"
+                    app:srcCompat="@android:color/background_light"
+                    tools:layout_editor_absoluteX="26dp"
+                    tools:layout_editor_absoluteY="74dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <RatingBar
+                        android:id="@+id/ratingsleepy.png"
+                        style="@style/Widget.AppCompat.RatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="false"
+                        android:numStars="5"
+                        android:progressTint="@color/colorAccent"
+                        android:stepSize="1"
+                        tools:layout_editor_absoluteX="171dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <Button
+                        android:id="@+id/Rsleepy.png"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:onClick="onResetButtonClick"
+                        android:text="R" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </GridLayout>
+
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
